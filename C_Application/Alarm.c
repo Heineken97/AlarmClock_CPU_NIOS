@@ -20,19 +20,20 @@ typedef struct {
     int minuto;
     int segundo;
 } Tiempo;
-Tiempo alarma_inicio = {0, 0, 0};
+
 Tiempo alarma_fin = {0, 0, 0};
 Tiempo hora_actual = {0, 0, 0}; // Nueva estructura para la hora actual
 
 int alarma_activada = 0;
 int minutos_restantes = 0;
+unsigned char boton_numero, boton_confirmar;
+
 int sonido() {
     // Comparación de la hora actual con la hora de la alarma
     int minutos_actuales = hora_actual.hora * 60 + hora_actual.minuto;
-    int minutos_inicio = alarma_inicio.hora * 60 + alarma_inicio.minuto;
     int minutos_fin = alarma_fin.hora * 60 + alarma_fin.minuto;
 
-    if (minutos_actuales >= minutos_inicio && minutos_actuales < minutos_fin) {
+    if (minutos_actuales < minutos_fin) {
         IOWR(BUZZER_BASE, 0, 1); // Activar el buzzer
         printf("Alarma sonando...\n");
     } else {
@@ -47,13 +48,10 @@ int calcular_diferencia_minutos(Tiempo inicio, Tiempo fin) {
     return minutos_fin - minutos_inicio;
 }
 int alarma(int hora_inicio, int minuto_inicio, int segundo_inicio, int hora_fin, int minuto_fin, int segundo_fin) {
-	alarma_inicio.hora = hora_inicio;
-    alarma_inicio.minuto = minuto_inicio;
-    alarma_inicio.segundo = segundo_inicio;
     alarma_fin.hora = hora_fin;
     alarma_fin.minuto = minuto_fin;
     alarma_fin.segundo = segundo_fin;
-	minutos_restantes = calcular_diferencia_minutos(alarma_inicio, alarma_fin);
+	minutos_restantes = calcular_diferencia_minutos(hora_actual, alarma_fin);
 	alarma_activada = 1;
 	return 0;
 }
@@ -75,8 +73,6 @@ void incrementar_hora_actual() {
 void configurar_hora_actual() {
     int i = 0;
     int hora_temp = 0, minuto_temp = 0, segundo_temp = 0;
-    unsigned char boton_numero, boton_confirmar;
-
     while (i <= 2) {
         boton_numero = IORD(BUTTON_NUMERO_BASE, 0);
         boton_confirmar = IORD(BUTTON_CONFIRMAR_BASE, 0);
@@ -107,31 +103,51 @@ void configurar_hora_actual() {
     printf("Hora actual configurada: %02d:%02d:%02d\n", hora_actual.hora, hora_actual.minuto, hora_actual.segundo);
 }
 int main() {
-    int hora_inicio, minuto_inicio, segundo_inicio;
-    int hora_fin, minuto_fin, segundo_fin;
+	int hora_fin = 0, minuto_fin = 0, segundo_fin = 0;
     unsigned char switch_alarma;
 
     configurar_hora_actual(); // Configuración inicial de la hora
-
     while (1) {
         switch_alarma = IORD(SWITCH_ALARMA_BASE, 0);
-
         if (switch_alarma == 1) {
-            // Configurar la alarma de manera similar a la configuración de la hora actual
-            alarma(hora_inicio, minuto_inicio, segundo_inicio, hora_fin, minuto_fin, segundo_fin);
-            printf("Alarma configurada: Inicio %02d:%02d:%02d, Fin %02d:%02d:%02d\n",
-                   alarma_inicio.hora, alarma_inicio.minuto, alarma_inicio.segundo,
-                   alarma_fin.hora, alarma_fin.minuto, alarma_fin.segundo);
+            int i = 0;
+            while (i <= 2) {
+                boton_numero = IORD(BUTTON_NUMERO_BASE, 0); // Lee el botón de número
+                boton_confirmar = IORD(BUTTON_CONFIRMAR_BASE, 0); // Lee el botón de confirmar
+                if (boton_confirmar == 1) {
+                    i++;
+                }
+                if (i == 0) {
+                    hora_fin = boton_numero;
+                    if (hora_fin >= 24) {
+                        hora_fin = 0;
+                    }
+                } else if (i == 1) {
+                    minuto_fin = boton_numero;
+                    if (minuto_fin >= 60) {
+                        minuto_fin = 0;
+                    }
+                } else if (i == 2) {
+                    segundo_fin = boton_numero;
+                    if (segundo_fin >= 60) {
+                        segundo_fin = 0;
+                    }
+                    alarma(hora_actual.hora, hora_actual.minuto, hora_actual.segundo, hora_fin, minuto_fin, segundo_fin);
+                    printf("Alarma configurada: Fin %02d:%02d:%02d\n", alarma_fin.hora, alarma_fin.minuto, alarma_fin.segundo);
+                    break;
+                }
+            }
         }
 
-        incrementar_hora_actual(); // Incrementar la hora actual
+        incrementar_hora_actual(); // Incrementa la hora actual
 
         if (alarma_activada == 1) {
-            sonido(); // Verificar si debe sonar la alarma
+            sonido(); // Verifica si debe sonar la alarma
         }
 
         printf("Hora actual: %02d:%02d:%02d\n", hora_actual.hora, hora_actual.minuto, hora_actual.segundo);
 
+        // Actualiza los displays
         IOWR(DISPLAY_1_BASE, 0, hora_actual.hora / 10); // Primer dígito de la hora
         IOWR(DISPLAY_2_BASE, 0, hora_actual.hora % 10); // Segundo dígito de la hora
         IOWR(DISPLAY_3_BASE, 0, hora_actual.minuto / 10); // Primer dígito de los minutos
@@ -142,6 +158,7 @@ int main() {
         // Espera de un segundo simulado
         for (volatile int i = 0; i < 1000000; i++);
     }
+
 
     return 1;
 }
