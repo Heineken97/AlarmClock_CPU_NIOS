@@ -1,0 +1,39 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst CPU_Nios.switches -pg 1 -lvl 3 -y 1110
+preplace inst CPU_Nios.sevseg_secs_units -pg 1 -lvl 3 -y 1010
+preplace inst CPU_Nios.cpu_Nios -pg 1 -lvl 2 -y 100
+preplace inst CPU_Nios.sevseg_secs_tens -pg 1 -lvl 3 -y 910
+preplace inst CPU_Nios.sevseg_hours_tens -pg 1 -lvl 3 -y 510
+preplace inst CPU_Nios.jtag -pg 1 -lvl 3 -y 110
+preplace inst CPU_Nios.clk_cpu -pg 1 -lvl 1 -y 250
+preplace inst CPU_Nios.timer_interruption -pg 1 -lvl 3 -y 210
+preplace inst CPU_Nios -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst CPU_Nios.leds -pg 1 -lvl 3 -y 410
+preplace inst CPU_Nios.buzzer -pg 1 -lvl 3 -y 310
+preplace inst CPU_Nios.sevseg_mins_units -pg 1 -lvl 3 -y 810
+preplace inst CPU_Nios.sevseg_mins_tens -pg 1 -lvl 3 -y 710
+preplace inst CPU_Nios.memory_RAM -pg 1 -lvl 3 -y 30
+preplace inst CPU_Nios.buttons -pg 1 -lvl 3 -y 1210
+preplace inst CPU_Nios.sevseg_hours_units -pg 1 -lvl 3 -y 610
+preplace inst CPU_Nios.cpu_Nios.reset_bridge -pg 1
+preplace inst CPU_Nios.cpu_Nios.cpu -pg 1
+preplace inst CPU_Nios.cpu_Nios.clock_bridge -pg 1
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)CPU_Nios.sevseg_secs_tens,(SLAVE)sevseg_secs_tens.external_connection) 1 0 3 NJ 940 NJ 940 NJ
+preplace netloc POINT_TO_POINT<net_container>CPU_Nios</net_container>(SLAVE)clk_cpu.clk_in_reset,(MASTER)cpu_Nios.debug_reset_request) 1 0 3 150 240 NJ 300 770
+preplace netloc FAN_OUT<net_container>CPU_Nios</net_container>(MASTER)cpu_Nios.irq,(SLAVE)timer_interruption.irq,(SLAVE)jtag.irq) 1 2 1 830
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)buzzer.external_connection,(SLAVE)CPU_Nios.buzzer) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)CPU_Nios.leds,(SLAVE)leds.external_connection) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)clk_cpu.clk_in,(SLAVE)CPU_Nios.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)CPU_Nios.buttons,(SLAVE)buttons.external_connection) 1 0 3 NJ 1240 NJ 1240 NJ
+preplace netloc FAN_OUT<net_container>CPU_Nios</net_container>(SLAVE)sevseg_mins_tens.reset,(SLAVE)jtag.reset,(SLAVE)buzzer.reset,(SLAVE)buttons.reset,(SLAVE)sevseg_mins_units.reset,(SLAVE)timer_interruption.reset,(SLAVE)leds.reset,(SLAVE)sevseg_hours_units.reset,(SLAVE)sevseg_secs_tens.reset,(SLAVE)sevseg_secs_units.reset,(SLAVE)sevseg_hours_tens.reset,(SLAVE)memory_RAM.reset1,(SLAVE)cpu_Nios.reset,(MASTER)clk_cpu.clk_reset,(SLAVE)switches.reset) 1 1 2 390 260 850
+preplace netloc FAN_OUT<net_container>CPU_Nios</net_container>(SLAVE)buzzer.clk,(SLAVE)sevseg_mins_units.clk,(SLAVE)leds.clk,(SLAVE)switches.clk,(SLAVE)sevseg_secs_tens.clk,(MASTER)clk_cpu.clk,(SLAVE)sevseg_hours_units.clk,(SLAVE)timer_interruption.clk,(SLAVE)sevseg_mins_tens.clk,(SLAVE)jtag.clk,(SLAVE)buttons.clk,(SLAVE)sevseg_hours_tens.clk,(SLAVE)sevseg_secs_units.clk,(SLAVE)cpu_Nios.clk,(SLAVE)memory_RAM.clk1) 1 1 2 370 240 810
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)sevseg_mins_tens.external_connection,(SLAVE)CPU_Nios.sevseg_mins_tens) 1 0 3 NJ 740 NJ 740 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)sevseg_hours_units.external_connection,(SLAVE)CPU_Nios.sevseg_hours_units) 1 0 3 NJ 640 NJ 640 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)CPU_Nios.sevseg_secs_units,(SLAVE)sevseg_secs_units.external_connection) 1 0 3 NJ 1040 NJ 1040 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)CPU_Nios.sevseg_mins_units,(SLAVE)sevseg_mins_units.external_connection) 1 0 3 NJ 840 NJ 840 NJ
+preplace netloc INTERCONNECT<net_container>CPU_Nios</net_container>(MASTER)cpu_Nios.data_master,(MASTER)cpu_Nios.instruction_master,(SLAVE)switches.s1,(SLAVE)sevseg_secs_units.s1,(SLAVE)jtag.avalon_jtag_slave,(SLAVE)cpu_Nios.debug_mem_slave,(SLAVE)sevseg_hours_units.s1,(SLAVE)buzzer.s1,(SLAVE)sevseg_hours_tens.s1,(SLAVE)buttons.s1,(SLAVE)memory_RAM.s1,(SLAVE)sevseg_mins_tens.s1,(SLAVE)leds.s1,(SLAVE)sevseg_secs_tens.s1,(SLAVE)timer_interruption.s1,(SLAVE)sevseg_mins_units.s1) 1 1 2 410 280 790
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)CPU_Nios.switches,(SLAVE)switches.external_connection) 1 0 3 NJ 1140 NJ 1140 NJ
+preplace netloc EXPORT<net_container>CPU_Nios</net_container>(SLAVE)sevseg_hours_tens.external_connection,(SLAVE)CPU_Nios.sevseg_hours_tens) 1 0 3 NJ 540 NJ 540 NJ
+levelinfo -pg 1 0 120 1070
+levelinfo -hier CPU_Nios 130 180 530 910 1060

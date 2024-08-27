@@ -1,0 +1,249 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "buzzer_export",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_tens_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_hours_units_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_tens_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_mins_units_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_tens_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevseg_secs_units_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_clk",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

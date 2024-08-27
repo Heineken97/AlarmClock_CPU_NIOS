@@ -1,0 +1,159 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 400 504)
+	(text "CPU_Nios" (rect 170 -1 213 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 488 20 500)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "buttons_export[3..0]" (rect 0 0 79 12)(font "Arial" (font_size 8)))
+		(text "buttons_export[3..0]" (rect 4 61 124 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 176 72)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 141 46 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 176 152)(line_width 1))
+	)
+	(port
+		(pt 0 472)
+		(input)
+		(text "switches_export[1..0]" (rect 0 0 82 12)(font "Arial" (font_size 8)))
+		(text "switches_export[1..0]" (rect 4 461 130 472)(font "Arial" (font_size 8)))
+		(line (pt 0 472)(pt 176 472)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "buzzer_export" (rect 0 0 55 12)(font "Arial" (font_size 8)))
+		(text "buzzer_export" (rect 4 101 82 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 176 112)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "leds_export[9..0]" (rect 0 0 66 12)(font "Arial" (font_size 8)))
+		(text "leds_export[9..0]" (rect 4 181 106 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 176 192)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "sevseg_hours_tens_export[6..0]" (rect 0 0 130 12)(font "Arial" (font_size 8)))
+		(text "sevseg_hours_tens_export[6..0]" (rect 4 221 184 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 176 232)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(output)
+		(text "sevseg_hours_units_export[6..0]" (rect 0 0 132 12)(font "Arial" (font_size 8)))
+		(text "sevseg_hours_units_export[6..0]" (rect 4 261 190 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 176 272)(line_width 3))
+	)
+	(port
+		(pt 0 312)
+		(output)
+		(text "sevseg_mins_tens_export[6..0]" (rect 0 0 127 12)(font "Arial" (font_size 8)))
+		(text "sevseg_mins_tens_export[6..0]" (rect 4 301 178 312)(font "Arial" (font_size 8)))
+		(line (pt 0 312)(pt 176 312)(line_width 3))
+	)
+	(port
+		(pt 0 352)
+		(output)
+		(text "sevseg_mins_units_export[6..0]" (rect 0 0 128 12)(font "Arial" (font_size 8)))
+		(text "sevseg_mins_units_export[6..0]" (rect 4 341 184 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 176 352)(line_width 3))
+	)
+	(port
+		(pt 0 392)
+		(output)
+		(text "sevseg_secs_tens_export[6..0]" (rect 0 0 127 12)(font "Arial" (font_size 8)))
+		(text "sevseg_secs_tens_export[6..0]" (rect 4 381 178 392)(font "Arial" (font_size 8)))
+		(line (pt 0 392)(pt 176 392)(line_width 3))
+	)
+	(port
+		(pt 0 432)
+		(output)
+		(text "sevseg_secs_units_export[6..0]" (rect 0 0 128 12)(font "Arial" (font_size 8)))
+		(text "sevseg_secs_units_export[6..0]" (rect 4 421 184 432)(font "Arial" (font_size 8)))
+		(line (pt 0 432)(pt 176 432)(line_width 3))
+	)
+	(drawing
+		(text "buttons" (rect 134 43 310 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 67 398 144)(font "Arial" (color 0 0 0)))
+		(text "buzzer" (rect 139 83 314 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 107 398 224)(font "Arial" (color 0 0 0)))
+		(text "clk" (rect 161 123 340 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 181 147 380 304)(font "Arial" (color 0 0 0)))
+		(text "leds" (rect 153 163 330 339)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 187 398 384)(font "Arial" (color 0 0 0)))
+		(text "sevseg_hours_tens" (rect 62 203 226 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 227 398 464)(font "Arial" (color 0 0 0)))
+		(text "sevseg_hours_units" (rect 59 243 226 499)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 267 398 544)(font "Arial" (color 0 0 0)))
+		(text "sevseg_mins_tens" (rect 67 283 230 579)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 307 398 624)(font "Arial" (color 0 0 0)))
+		(text "sevseg_mins_units" (rect 64 323 230 659)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 347 398 704)(font "Arial" (color 0 0 0)))
+		(text "sevseg_secs_tens" (rect 68 363 232 739)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 387 398 784)(font "Arial" (color 0 0 0)))
+		(text "sevseg_secs_units" (rect 65 403 232 819)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 427 398 864)(font "Arial" (color 0 0 0)))
+		(text "switches" (rect 126 443 300 899)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 181 467 398 944)(font "Arial" (color 0 0 0)))
+		(text " CPU_Nios " (rect 352 488 764 986)(font "Arial" ))
+		(line (pt 176 32)(pt 224 32)(line_width 1))
+		(line (pt 224 32)(pt 224 488)(line_width 1))
+		(line (pt 176 488)(pt 224 488)(line_width 1))
+		(line (pt 176 32)(pt 176 488)(line_width 1))
+		(line (pt 177 52)(pt 177 76)(line_width 1))
+		(line (pt 178 52)(pt 178 76)(line_width 1))
+		(line (pt 177 92)(pt 177 116)(line_width 1))
+		(line (pt 178 92)(pt 178 116)(line_width 1))
+		(line (pt 177 132)(pt 177 156)(line_width 1))
+		(line (pt 178 132)(pt 178 156)(line_width 1))
+		(line (pt 177 172)(pt 177 196)(line_width 1))
+		(line (pt 178 172)(pt 178 196)(line_width 1))
+		(line (pt 177 212)(pt 177 236)(line_width 1))
+		(line (pt 178 212)(pt 178 236)(line_width 1))
+		(line (pt 177 252)(pt 177 276)(line_width 1))
+		(line (pt 178 252)(pt 178 276)(line_width 1))
+		(line (pt 177 292)(pt 177 316)(line_width 1))
+		(line (pt 178 292)(pt 178 316)(line_width 1))
+		(line (pt 177 332)(pt 177 356)(line_width 1))
+		(line (pt 178 332)(pt 178 356)(line_width 1))
+		(line (pt 177 372)(pt 177 396)(line_width 1))
+		(line (pt 178 372)(pt 178 396)(line_width 1))
+		(line (pt 177 412)(pt 177 436)(line_width 1))
+		(line (pt 178 412)(pt 178 436)(line_width 1))
+		(line (pt 177 452)(pt 177 476)(line_width 1))
+		(line (pt 178 452)(pt 178 476)(line_width 1))
+		(line (pt 0 0)(pt 400 0)(line_width 1))
+		(line (pt 400 0)(pt 400 504)(line_width 1))
+		(line (pt 0 504)(pt 400 504)(line_width 1))
+		(line (pt 0 0)(pt 0 504)(line_width 1))
+	)
+)

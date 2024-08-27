@@ -1,0 +1,18 @@
+14:35:30 **** Incremental Build of configuration Nios II for project Alarm_CPU_Nios ****
+make all 
+Info: Building ../Alarm_CPU_Nios_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Alarm_CPU_Nios_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Alarm_CPU_Nios_bsp//HAL/inc -I../Alarm_CPU_Nios_bsp/ -I../Alarm_CPU_Nios_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+Info: Linking Alarm_CPU_Nios.elf
+nios2-elf-g++  -T'../Alarm_CPU_Nios_bsp//linker.x' -msys-crt0='../Alarm_CPU_Nios_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Alarm_CPU_Nios_bsp/  -msmallc  -Wl,-Map=Alarm_CPU_Nios.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Alarm_CPU_Nios.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert Alarm_CPU_Nios.elf --thread_model hal --cpu_name cpu_Nios --qsys true --simulation_enabled false --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name CPU_Nios --quartus_project_dir "C:/Users/Joseph/Downloads/Tarea1_JosephRuben/AlarmClock_CPU_NIOS/Procesador_NIOS/CPU_Nios_platform" --sopcinfo C:/Users/Joseph/Downloads/Tarea1_JosephRuben/AlarmClock_CPU_NIOS/Procesador_NIOS/CPU_Nios_platform/software/Alarm_CPU_Nios_bsp/../../CPU_Nios.sopcinfo
+Info: (Alarm_CPU_Nios.elf) 3480 Bytes program size (code + initialized data).
+Info:                      124 KBytes free for stack + heap.
+Info: Creating Alarm_CPU_Nios.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Alarm_CPU_Nios.elf >Alarm_CPU_Nios.objdump
+[Alarm_CPU_Nios build complete]
+
+14:35:32 Build Finished (took 2s.56ms)
+
